@@ -3,9 +3,314 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Frontend Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>testing the page</h1>
+<style>
+     .project-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .project-card .hover-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+        .project-card:hover .hover-img {
+            opacity: 1;
+        }
+    .login-form {
+        position: fixed;
+        bottom: 10%;
+        left: 50%;
+        transform: translate(-50%, 100%);
+        background: white;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        transition: transform 0.5s ease-in-out;
+        display: none;
+    }
+    .show {
+        transform: translate(-50%, 0);
+        display: block;
+    }
+</style>
+<body class="bg-white font-sans">
+    <header class="flex justify-between items-center py-6 px-10">
+        <h1 class="text-xl font-bold">GIFTED.</h1>
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="#" class="text-purple-700 font-semibold">Home</a></li>
+                <li><a href="#project" class="text-gray-700 hover:text-purple-700">Projects</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-purple-700">About</a></li>
+            </ul>
+        </nav>
+        
+        <div class="relative">
+            <div id="profileIcon" class="text-gray-700 text-2xl cursor-pointer rounded-full bg-black p-2">
+                <img src="https://img.icons8.com/?size=100&id=118374&format=png&color=ffffff" alt="Profile" class="w-[34px]">
+            </div>
+        
+         
+            <div id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white shadow-md rounded-md hidden">
+                <ul class="py-2">
+                    <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Profile</a></li>
+                    <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Settings</a></li>
+                    <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+    </header>
+    
+    <main class="flex flex-col md:flex-row items-center justify-between px-10 py-20">
+        <div class="max-w-lg">
+            <p class="text-lg text-gray-700">Hey, I'm Luca👋</p>
+            <h2 class="text-6xl font-extrabold mt-2">
+                <span class="text-purple-700">Front</span>end <br> Developer
+            </h2>
+            <p class="text-gray-600 mt-4 text-lg">I'm a frontend developer based in Italy, I'll help you build beautiful websites your users will love.</p>
+            <div class="mt-6 flex space-x-4">
+                <button class="bg-black text-white px-6 py-3 rounded-lg shadow-md">Get In Touch</button>
+                <button class="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg shadow-md">Browse Projects</button>
+            </div>
+        </div>
+        <div class="relative mt-10 md:mt-0">
+            <div class="w-64 h-64 rounded-full border-2 border-purple-700 flex items-center justify-center overflow-hidden">
+                <img src="./img/WhatsApp Image 2025-01-08 at 10.32.39_1f2af1cb.jpg" alt="Profile Picture" class="w-full h-full object-cover p-4 rounded-full">
+            </div>
+        </div>
+    </main>
+    
+    <header class="flex justify-between items-center py-6 px-10">
+        <h1 class="text-xl font-bold">GIFTED.</h1>
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="#" class="text-purple-700 font-semibold">Home</a></li>
+                <li><a href="#project" class="text-gray-700 hover:text-purple-700">Projects</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-purple-700">About</a></li>
+            </ul>
+        </nav>
+        <div class="text-gray-700 text-2xl cursor-pointer">☰</div>
+    </header>
+    <section id="about" class="py-20 px-6">
+        <div class="container mx-auto">
+             
+              <h2 class="text-4xl font-bold text-gray-800 mb-6">About me<span class="text-purple-700">.</span></h2>
+              <div class="border-l-4 border-purple-900 pl-4 text-5xl font-bold mb-40">
+            <p class="text-gray-600 text-lg max-w-2xlmb-10 ">Developing beautiful and functional websites is what I love doing, and that's why I give my all in every <br> new challenge.  </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 ">
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md w-3/4  h-90 ml-50">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">My Stack.</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-stone-800 px-5 py-4 rounded-lg shadow-md text-gray-400">UI/UX Expertise ⭐</span>
+                        <span class="bg-stone-800 px-5 py-4 rounded-lg shadow-md text-gray-400">JavaScript Proficiency ⭐</span>
+                        <span class="bg-stone-800 px-5 py-4 rounded-lg shadow-md text-gray-400">Responsive Design ⭐</span>
+                        <span class="bg-stone-800 px-5 py-4 rounded-lg shadow-md text-gray-400">Creative Thinking ⭐</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="bg-stone-800 px-4 py-2 rounded-lg shadow-md text-gray-400">UI/UX Expertise ⭐</span>
+                        <span class="bg-stone-800 px-4 py-2 rounded-lg shadow-md text-gray-400">JavaScript Proficiency ⭐</span>
+                        <span class="bg-stone-800 px-4 py-2 rounded-lg shadow-md text-gray-400">Responsive Design ⭐</span>
+                        <span class="bg-stone-800 px-4 py-2 rounded-lg shadow-md text-gray-400">Creative Thinking ⭐</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">My Special Place.</h3>
+                    <div class="rounded-lg overflow-hidden ml-0">
+                        <img src="https://images.pexels.com/photos/41949/earth-earth-at-night-night-lights-41949.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Globe Image" class="w-full">
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- Projects Section -->
+     <section id="project" class="py-20bg-white p-8">
+       
+            <section id="project" class="py-20 bg-white p-8">
+                <div class="container mx-auto px-6 text-center">
+                    <h3 class="text-4xl font-bold text-gray-800 mb-10">My Projects</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="project-card">
+                            <img src="https://images.pexels.com/photos/3220388/pexels-photo-3220388.jpeg?auto=compress&cs=tinysrgb&w=600" class="main-img" />
+                            <img src="https://images.pexels.com/photos/1005644/pexels-photo-1005644.jpeg?auto=compress&cs=tinysrgb&w=600" class="hover-img" />
+                        </div>
+                        <div class="project-card">
+                            <img src="https://images.pexels.com/photos/3378662/pexels-photo-3378662.jpeg?auto=compress&cs=tinysrgb&w=600" class="main-img" />
+                            <img src="https://images.pexels.com/photos/3153201/pexels-photo-3153201.jpeg?auto=compress&cs=tinysrgb&w=600" class="hover-img" />
+                        </div>
+                        <div class="project-card">
+                            <img src="https://images.pexels.com/photos/7568331/pexels-photo-7568331.jpeg?auto=compress&cs=tinysrgb&w=600" class="main-img" />
+                            <img src="https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=600" class="hover-img" />
+                        </div>
+                    </div>
+                </div>
+                <div class="container mx-auto px-6 text-center mt-5">
+                   
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="project-card">
+                            <img src="https://images.pexels.com/photos/3220388/pexels-photo-3220388.jpeg?auto=compress&cs=tinysrgb&w=600" class="main-img" />
+                            <img src="https://images.pexels.com/photos/1005644/pexels-photo-1005644.jpeg?auto=compress&cs=tinysrgb&w=600" class="hover-img" />
+                        </div>
+                        <div class="project-card">
+                            <img src="https://images.pexels.com/photos/3378662/pexels-photo-3378662.jpeg?auto=compress&cs=tinysrgb&w=600" class="main-img" />
+                            <img src="https://images.pexels.com/photos/3153201/pexels-photo-3153201.jpeg?auto=compress&cs=tinysrgb&w=600" class="hover-img" />
+                        </div>
+                        <div class="project-card">
+                            <img src="https://images.pexels.com/photos/7568331/pexels-photo-7568331.jpeg?auto=compress&cs=tinysrgb&w=600" class="main-img" />
+                            <img src="https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=600" class="hover-img" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <section class="bg-white p-8">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-gray-900 flex items-center">
+                Experience<span class="text-purple-600">.</span>
+            </h2>
+            <div class="flex flex-col md:flex-row mt-6">
+                <div class="w-full md:w-1/4 border-l-2 border-purple-700 pl-4 mb-4 md:mb-0">
+                    <ul class="space-y-4 text-gray-500 font-medium ">
+                        <li class="text-purple-600 font-semibold">Apple</li>
+                        <li>Microsoft</li>
+                        <li>Spotify</li>
+                        <li>Stripe</li>
+                        <li>Webflow</li>
+                        
+                    </ul>
+                </div>
+                <div class="w-full md:w-3/4 md:pl-8">
+                    <h3 class="text-xl font-semibold text-gray-900">Engineer <span class="text-purple-600">@ Apple</span></h3>
+                    <p class="text-gray-500 text-sm">May 2018 - Present</p>
+                    <ul class="mt-4 space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-2">✔️</span>
+                            Developed and shipped highly interactive web applications for Apple Music using Ember.js
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-2">✔️</span>
+                            Built and shipped the Apple Music Extension within Facebook Messenger leveraging third-party and internal APIs
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-2">✔️</span>
+                            Contributed extensively to MusicKit.js, a JavaScript framework that allows developers to add an Apple Music player to their web apps
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="loginForm" class="login-form">
+        <button onclick="closeForm()" class="absolute top-2 right-2 bg-gray-200 p-1 rounded">✖</button>
+        <h2 class="text-xl font-bold mb-4">Login</h2>
+        <input type="text" placeholder="Username" class="w-full px-4 py-2 border rounded mb-2">
+        <input type="password" placeholder="Password" class="w-full px-4 py-2 border rounded mb-4">
+        <button class="bg-purple-700 text-white px-4 py-2 rounded w-full">Login</button>
+    </div>
+    
+    <footer class="container mx-auto px-6 py-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-8">
+            Skills<span class="text-purple-700">.</span>
+        </h2>
+ 
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          
+            <div>
+                <h3 class="text-lg font-semibold text-gray-900">Web Design</h3>
+                <ul class="mt-2 space-y-1 text-gray-600">
+                    <li>UI/UX Design</li>
+                    <li>Responsive Design</li>
+                    <li>Wireframing</li>
+                    <li>User Research</li>
+                </ul>
+            </div>
+    
+            <div>
+                <h3 class="text-lg font-semibold text-gray-900">Frontend</h3>
+                <ul class="mt-2 space-y-1 text-gray-600">
+                    <li>JavaScript</li>
+                    <li>ReactJS</li>
+                    <li>NextJS</li>
+                    <li>CSS3</li>
+                </ul>
+            </div>
+    
+
+            <div>
+                <h3 class="text-lg font-semibold text-gray-900">Backend</h3>
+                <ul class="mt-2 space-y-1 text-gray-600">
+                    <li>NodeJS</li>
+                    <li>MongoDB</li>
+                    <li>ExpressJS</li>
+                    <li>Vercel</li>
+                </ul>
+            </div>
+    
+            <!-- Soft Skills -->
+            <div>
+                <h3 class="text-lg font-semibold text-gray-900">Soft Skills</h3>
+                <ul class="mt-2 space-y-1 text-gray-600">
+                    <li>Effective communication</li>
+                    <li>Collaboration</li>
+                    <li>Commitment</li>
+                    <li>Leadership</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener("scroll", function() {
+            const footer = document.querySelector("footer");
+            const form = document.getElementById("loginForm");
+            const footerPosition = footer.getBoundingClientRect().top;
+            
+            if (footerPosition < window.innerHeight) {
+                form.classList.add("show");
+            }
+        });
+        
+        function closeForm() {
+            document.getElementById("loginForm").classList.remove("show");
+        }
+
+    document.getElementById("profileIcon").addEventListener("click", function() {
+        var dropdown = document.getElementById("dropdownMenu");
+        dropdown.classList.toggle("hidden");
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", function(event) {
+        var profileIcon = document.getElementById("profileIcon");
+        var dropdown = document.getElementById("dropdownMenu");
+
+        if (!profileIcon.contains(event.target) && !dropdown.contains(event.target)) {
+            dropdown.classList.add("hidden");
+        }
+    });
+        
+    </script>
 </body>
 </html>
